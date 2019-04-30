@@ -69,17 +69,20 @@ int main() {
             scanf("%s", loginUsername);
             printf("Please enter your password: \n");
             scanf("%s", loginPassword);
-            for (int i = 0; i < presentValue; i++) {
-                if (loginUsername = arr_Users[i].username && loginPassword == arr_Users[i].passwd) {
+            for (int i = 0; i < presentValue; i++)
+            {
+                if (arr_Users[i].username==loginUsername && arr_Users[i].passwd==loginPassword)
+                {
                     grantAccess = 1;
                     userId = arr_Users[i].uid;
-
+                    break;
                 }
             }
-            if (grantAccess = 1) {
+            if (grantAccess == 1) {
                 printf("Welcome User: %s", arr_Users[userId].first_name);
-                loginFunctions(grantAccess, arr_Users);
-            } else if (grantAccess == 0) {
+                loginFunctions(userId, arr_Users);
+            }
+            else if (grantAccess == 0) {
                 printf("The Login was incorrect: \n");
             }
         }
