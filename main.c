@@ -64,7 +64,7 @@ int main() {
     do {
         printf("Press 1. to Login: \n");
         printf("Press 2. to Create an Account \n");
-        printf("Press 3. to Exit the program: \n");
+        printf("Press 3. Demonstration of adding an account to first account created: \n");
         scanf("%d", &optionOne);
 
         if (optionOne == 1) {
