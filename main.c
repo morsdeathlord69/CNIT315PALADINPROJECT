@@ -33,9 +33,7 @@ typedef struct User {
 int main() {
     int presentValue = -1;
     int option = 0;
-    printf("Welcome to Paladin.\n");
-    printf("Do you have an account? (Y/N)\n");
-    printf("Peter can access this when the stars align properly+edit:) \n");
+    displayWelcome();
     struct User arr_Users[50];
     for (int i = 0; i < 50; i++) {
         arr_Users[i].first_name = NULL;
@@ -147,4 +145,52 @@ IndividualAccount * CreateNewAccount(char * username, char * passwd) {
     new_userAccount->userName = username;
     new_userAccount->password = passwd;
     return new_userAccount;
+}
+void displayWelcome() {
+    printf("                      ███████                       \n");
+    printf("                      ███11███                     \n");
+    printf("                      ██1111██                      \n");
+    printf("                      ███11███                      \n");
+    printf("                       ██11██                       \n");
+    printf("                      ██████                       \n");
+    printf("                     ████████                      \n");
+    printf("                  ████████████                    \n");
+    printf("             ██████████████████████               \n");
+    printf("        ████████████████████████████            \n");
+    printf("             ████111111111111111111████             \n");
+    printf("               ██████████████████                 \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                      ██_11_██                      \n");
+    printf("                       ██__██                       \n");
+    printf("                        ████                        \n");
+    printf("                         ██                         \n");
+    printf("††††††††††††††††††††††††††††††††††††††††††††††††††††\n");
+    printf("†                     PALADIN:                     †\n");
+    printf("† PROTECTING THE HOLY WORDS SINCE THE 13TH CENTURY †\n");
+    printf("†                                                  †\n");
+    printf("†                                                  †\n");
+    printf("†                 Created  By:                     †\n");
+    printf("†                   Peter  Shoaf                   †\n");
+    printf("†                   Shyam  Merchant                †\n");
+    printf("†                  Vivian  Phan                    †\n");
+    printf("†                  Lancia  Raja                    †\n");
+    printf("†                                                  †\n");
+    printf("†                                                  †\n");
+    printf("†                                                  †\n");
+    printf("†                                                  †\n");
+    printf("†                                                  †\n");
+    printf("†                    Deus Vult!                    †\n");
+    printf("††††††††††††††††††††††††††††††††††††††††††††††††††††\n");
 }
