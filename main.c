@@ -130,6 +130,7 @@ int main() {
                 arr_Users[0].ac.password=password;
                 printf("Username is: %s \n",arr_Users[0].ac.userName);
                 printf("Password is: %s \n",arr_Users[0].ac.password);
+                printf("Hello \n");
             }
         }
 
