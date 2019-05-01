@@ -44,7 +44,7 @@ int main() {
         arr_Users[i].last_name = NULL;
         arr_Users[i].username = NULL;
         arr_Users[i].passwd = NULL;
-        arr_Users[i].uid = NULL;
+        arr_Users[i].uid = -1;
     }
     arr_Users[0].first_name ="Shyam";
     arr_Users[0].last_name = "Merchant";
@@ -72,6 +72,7 @@ int main() {
             loginUsername = malloc(sizeof(char *));
             char *loginPassword;
             loginPassword = malloc(sizeof(char *));
+            int z=0;
             printf("Please enter your username: \n");
             scanf("%s", loginUsername);
             printf("Please enter your password: \n");
@@ -81,24 +82,27 @@ int main() {
             compUNAME = malloc(sizeof(char *));
             char *compPass;
             compPass = malloc(sizeof(char *));
-            for (int i = 0; i < 50; i++)
+            while(compUNAME!=NULL)
             {
-                compUNAME=arr_Users[i].username;
-                compPass=arr_Users[i].passwd;
-                printf("Username: %s",compUNAME);
-                printf("Password: %s",compPass);
+                compUNAME=arr_Users[z].username;
+                compPass=arr_Users[z].passwd;
                 if (strcmp(compUNAME,loginUsername)==0 && strcmp(compPass,loginPassword)==0)
                 {
                     grantAccess = 1;
-                    userId = arr_Users[i].uid;
+                    userId = arr_Users[z].uid;
                     break;
+                }
+                else
+                {
+                    z++;
                 }
             }
             if (grantAccess == 1) {
-                printf("Welcome User: %s", arr_Users[userId].first_name);
+                printf("\nWelcome User: %s\n", arr_Users[userId].first_name);
                 loginFunctions(userId, arr_Users);
-            } else
-                {
+            }
+            else
+            {
                 printf("The Login was incorrect: \n");
                 printf("The function is: \n");
                 printf("Username: %s",compUNAME);
@@ -148,7 +152,7 @@ int main() {
             presentValue++;
         }
         if (optionOne == 3) {
-        exit(0);
+            exit(0);
         }
     }
     while(optionOne!=-1);
@@ -176,7 +180,7 @@ void displayWelcome() {
     printf("                      ██████                       \n");
     printf("                     ████████                      \n");
     printf("                  ████████████                    \n");
-    printf("             ██████████████████████               \n");
+    printf("             ██████████████████████                \n");
     printf("        ████████████████████████████            \n");
     printf("             ████111111111111111111████             \n");
     printf("               ██████████████████                 \n");
@@ -197,7 +201,7 @@ void displayWelcome() {
     printf("                       ██__██                       \n");
     printf("                        ████                        \n");
     printf("                         ██                         \n");
-    printf("††††††††††††††††††††††††††††††††††††††††††††††††††††\n");
+    printf("††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††††\n");
     printf("†                     PALADIN:                     †\n");
     printf("† PROTECTING THE HOLY WORDS SINCE THE 13TH CENTURY †\n");
     printf("†                                                  †\n");
@@ -233,10 +237,10 @@ void loginFunctions(int presentValue,User arr_Users[50])
         if (option == 1)
         {
 
-            if (arr_Users[currValue].uid == NULL) {
+            if (arr_Users[presentValue].uid == -1) {
                 printf("You do not have an account! Can not add details. \n");
             } else
-                {
+            {
                 for (int i=currValue;i<currValue+1;i++)
                 {
                     char *user_Name = NULL;
@@ -268,14 +272,13 @@ void loginFunctions(int presentValue,User arr_Users[50])
                 printf("Password is %s \n", arr_Users[i].passwd);
 
             }
-            printf("***************************************** \n");
-            printf("***************************************** \n");
-            printf("***************************************** \n");
+            printf("----------------------------------------- \n");
             for(int i=presentValue;i<currValue;i++)
             {
                 printf("The %d account saved for user is: \n", arr_Accounts[i].aid);
                 printf("Username: %s\n", arr_Accounts[i].userName);
                 printf("Password: %s\n", arr_Accounts[i].password);
+                printf("----------------------------------------- \n");
             }
         }
         if(option==3)
@@ -288,7 +291,7 @@ void loginFunctions(int presentValue,User arr_Users[50])
         }
         if(option==4)
         {
-         encrypt();
+            encrypt();
         }
 
 
