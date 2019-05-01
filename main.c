@@ -64,23 +64,30 @@ int main() {
     do {
         printf("Press 1. to Login: \n");
         printf("Press 2. to Create an Account \n");
-        printf("Press 3. Demonstration of adding an account to first account created: \n");
+        printf("Press 3. to exit the program: \n");
         scanf("%d", &optionOne);
 
         if (optionOne == 1) {
             char *loginUsername;
             loginUsername = malloc(sizeof(char *));
             char *loginPassword;
-            loginPassword == malloc(sizeof(char *));
+            loginPassword = malloc(sizeof(char *));
             printf("Please enter your username: \n");
             scanf("%s", loginUsername);
             printf("Please enter your password: \n");
             scanf("%s", loginPassword);
             //loginFunctions(arr_Users[0].uid,arr_Users);
-
+            char *compUNAME;
+            compUNAME = malloc(sizeof(char *));
+            char *compPass;
+            compPass = malloc(sizeof(char *));
             for (int i = 0; i < 50; i++)
             {
-                if (arr_Users[i].username==loginUsername && arr_Users[i].passwd==loginPassword)
+                compUNAME=arr_Users[i].username;
+                compPass=arr_Users[i].passwd;
+                printf("Username: %s",compUNAME);
+                printf("Password: %s",compPass);
+                if (strcmp(compUNAME,loginUsername)==0 && strcmp(compPass,loginPassword)==0)
                 {
                     grantAccess = 1;
                     userId = arr_Users[i].uid;
@@ -90,9 +97,12 @@ int main() {
             if (grantAccess == 1) {
                 printf("Welcome User: %s", arr_Users[userId].first_name);
                 loginFunctions(userId, arr_Users);
-            }
-            else if (grantAccess == 0) {
+            } else
+                {
                 printf("The Login was incorrect: \n");
+                printf("The function is: \n");
+                printf("Username: %s",compUNAME);
+                printf("Password: %s",compPass);
             }
 
         }
@@ -137,9 +147,8 @@ int main() {
             printf("***************************************** \n");
             presentValue++;
         }
-
         if (optionOne == 3) {
-        loginFunctions(arr_Users[0].uid,arr_Users);
+        exit(0);
         }
     }
     while(optionOne!=-1);
