@@ -31,7 +31,7 @@ typedef struct User {
         User;
 
 int main() {
-    int presentValue = 0;
+    int presentValue = 1;
     int userId=-1;
     int optionOne = 0;
     int option = 0;
@@ -39,6 +39,7 @@ int main() {
     void displayWelcome();
     void loginFunctions(int presentValue,User arr_Users[50]);
     struct User arr_Users[50];
+    int encrypt();
     for (int i = 0; i < 50; i++) {
         arr_Users[i].first_name = NULL;
         arr_Users[i].last_name = NULL;
@@ -231,8 +232,8 @@ void loginFunctions(int presentValue,User arr_Users[50])
         printf("Press 1. To add an account to your user \n");
         printf("Press 2. To view the accounts saved in the username \n");
         printf("Press 3. Check Password Strength: \n");
-        printf("Press 4. To Encrypt Passwords \n");
-        printf("Press -1. To end the program: \n");
+        printf("Press 4. To Encrypt a Password \n");
+        printf("Press -1. To go to main menu: \n");
         scanf("%d", &option);
         if (option == 1)
         {
@@ -291,12 +292,12 @@ void loginFunctions(int presentValue,User arr_Users[50])
         }
         if(option==4)
         {
-            encrypt();
+        encrypt();
         }
-
 
     } while (option != -1);
 }
+//EXTERNAL API CODE DUE TO NETWORK ERROR
 void check(char a[])
 {
     char c;
@@ -346,6 +347,7 @@ void check(char a[])
 
     return;
 }
+//EXTERNAL API CODE DUE TO NETWORK ERROR
 int encrypt()
 {
     int i, x;
@@ -379,6 +381,5 @@ int encrypt()
         default:
             printf("\nError\n");
     }
-    return 0;
 
 }
