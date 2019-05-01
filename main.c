@@ -76,8 +76,8 @@ int main() {
             scanf("%s", loginUsername);
             printf("Please enter your password: \n");
             scanf("%s", loginPassword);
-            loginFunctions(arr_Users[0].uid,arr_Users);
-            /*
+            //loginFunctions(arr_Users[0].uid,arr_Users);
+
             for (int i = 0; i < 50; i++)
             {
                 if (arr_Users[i].username==loginUsername && arr_Users[i].passwd==loginPassword)
@@ -94,7 +94,7 @@ int main() {
             else if (grantAccess == 0) {
                 printf("The Login was incorrect: \n");
             }
-             */
+
         }
         if (optionOne == 2) {
             char *First_Name = NULL;
@@ -224,7 +224,7 @@ void loginFunctions(int presentValue,User arr_Users[50])
         if (option == 1)
         {
 
-            if (arr_Users[currValue].uid = NULL) {
+            if (arr_Users[currValue].uid == NULL) {
                 printf("You do not have an account! Can not add details. \n");
             } else
                 {
